@@ -4,7 +4,10 @@
 
 }
 body{
-    background-image: linear-gradient(to right , red ,blue);
+    background-image: linear-gradient(to bottom right , red ,blue);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+
 }
 .container{
     width: 80%;
