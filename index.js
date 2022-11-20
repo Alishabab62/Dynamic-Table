@@ -41,3 +41,23 @@ function add_item(){
     }
     }
 
+    // if input box is empty
+
+
+    nam.addEventListener('blur',()=>{
+        if(nam.value===""){
+            alert('Enter Your Name');
+        }
+    });
+
+    email.addEventListener('blur',()=>{
+        if(nam.value===""){
+            alert('Enter Your Email');
+        }
+    })
+
+    tel.addEventListener('blur',()=>{
+        if(nam.value===""){
+            alert('Enter Your Phone No.');
+        }
+    })

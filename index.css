@@ -11,6 +11,13 @@ body{
     margin: auto;
     margin-top: 50px;
 }
+h3{
+    text-align: center;
+    padding: 50px;
+    font-size: 40px;
+    color: bisque;
+    font-family: Arial, Helvetica, sans-serif;
+}
 .input{
     width: 100%;
     margin: auto;
@@ -24,12 +31,14 @@ body{
     border: 8px solid lightgreen;
     font-size: 25px;
     padding-left: 10px;
+    border-radius:8px ;
 }
 .input button{
     width: 10%;
     height: 55px;
     background-color: green;
     border-radius: 8px;
+    border: 2px solid lightgreen;
 }
 .table{
     width: 100%;
