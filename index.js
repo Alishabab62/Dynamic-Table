@@ -3,13 +3,14 @@ const email=document.getElementById('email');
 const tel=document.getElementById('tel');
 const btn=document.getElementById('btn');
 const table=document.getElementById('table');
+const error=document.querySelector('.error');
 
 
 btn.addEventListener('click' ,add_item);
 
 // Function to create Add Item
 
-function add_item(){
+function add_item(event){
     if(nam.value!=="" && email.value!=="" && tel.value!==""){
         console.log('Btn')
         const new_tr=document.createElement('tr');
@@ -21,7 +22,8 @@ function add_item(){
         const new_td3=document.createElement('td');
         new_td1.id='td3';
         const new_btn=document.createElement('button');
-        new_btn.id='new-btn';
+        new_btn.className='new-btn';
+        event.preventDefault();
         new_tr.appendChild(new_td1);
         new_tr.appendChild(new_td2);
         new_tr.appendChild(new_td3);
@@ -34,30 +36,30 @@ function add_item(){
         email.value="";
         tel.value="";
         new_td1.style.backgroundColor="lightblue";
+        new_td1.style.width="28.5%"
         new_td2.style.backgroundColor="lightblue";
         new_td3.style.backgroundColor="lightblue";
         new_btn.style.color="white";
         new_btn.style.fontSize="25px";
+        new_btn.style.cursor="pointer"
+        new_btn.style.width="9.8%"
     }
+
+    // If Any Details is not present
+    else{
+        alert("Enter Your Detail(s)");
+        // setTimeout(()=>{
+        //     error.innerText="Empty Field(s)";
+        // },2000);
     }
+    
+}
 
-    // if input box is empty
+table.addEventListener("click" ,deleteItem);
 
-
-    nam.addEventListener('blur',()=>{
-        if(nam.value===""){
-            alert('Enter Your Name');
-        }
-    });
-
-    email.addEventListener('blur',()=>{
-        if(nam.value===""){
-            alert('Enter Your Email');
-        }
-    })
-
-    tel.addEventListener('blur',()=>{
-        if(nam.value===""){
-            alert('Enter Your Phone No.');
-        }
-    })
+function deleteItem(e){
+    if(e.target.classList.contains('new-btn')){
+        console.log(e);
+        e.target.parentNode.remove();
+    }
+}
